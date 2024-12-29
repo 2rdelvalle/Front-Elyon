@@ -1,5 +1,6 @@
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { LoginComponent } from './login/login.component';
 import {
   NbAuthComponent,
   NbLoginComponent,
@@ -25,7 +26,10 @@ export const routes: Routes = [
       },
       {
         path: 'login',
-        component: NbLoginComponent,
+        component: LoginComponent,
+      },
+      { path: '', 
+        redirectTo: '/login', pathMatch: 'full' 
       },
       {
         path: 'register',
@@ -45,7 +49,7 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
+ // { path: '', redirectTo: 'pages', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages' },
 ];
 

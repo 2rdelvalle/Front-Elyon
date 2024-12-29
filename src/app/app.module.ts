@@ -1,10 +1,4 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,7 +6,7 @@ import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
+import { LoginComponent } from './login/login.component'; // Importar el componente de login
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -22,13 +16,14 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
-import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent // Declarar el componente de login
+  ],
   imports: [
     BrowserModule,
-    FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,

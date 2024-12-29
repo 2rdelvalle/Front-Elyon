@@ -49,7 +49,7 @@ export const routes: Routes = [
       },
     ],
   },
- // { path: '', redirectTo: 'pages', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' }, // Opcional: cambia el redireccionamiento por defecto
   { path: '**', redirectTo: 'pages' },
 ];
 

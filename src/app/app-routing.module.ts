@@ -50,8 +50,15 @@ export const routes: Routes = [
     path: 'login', 
     component: LoginComponent 
   }, 
-  { path: '', redirectTo: 'login', pathMatch: 'full' }, // Opcional: cambia el redireccionamiento por defecto
-  { path: '**', redirectTo: 'pages' },
+  { 
+    path: '', 
+    redirectTo: 'login', 
+    pathMatch: 'full' 
+  }, // Opcional: cambia el redireccionamiento por defecto
+  { 
+    path: '**', 
+    redirectTo: 'pages' 
+  },
 ];
 
 const config: ExtraOptions = {

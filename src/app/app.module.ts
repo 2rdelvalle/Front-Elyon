@@ -2,11 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; // Importa FormsModule
 import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './login/login.component'; // Importar el componente de login
+import { LoginComponent } from './login/login.component'; // Importa el componente de login
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -20,12 +21,13 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent // Declarar el componente de login
+    LoginComponent // Declara el componente de login
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule, // Añade FormsModule a las importaciones
     AppRoutingModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),

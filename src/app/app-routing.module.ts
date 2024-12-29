@@ -26,10 +26,7 @@ export const routes: Routes = [
       },
       {
         path: 'login',
-        component: LoginComponent,
-      },
-      { path: '', 
-        redirectTo: '/login', pathMatch: 'full' 
+        component: NbLoginComponent,
       },
       {
         path: 'register',
@@ -49,6 +46,10 @@ export const routes: Routes = [
       },
     ],
   },
+  { 
+    path: 'login', 
+    component: LoginComponent 
+  }, 
   { path: '', redirectTo: 'login', pathMatch: 'full' }, // Opcional: cambia el redireccionamiento por defecto
   { path: '**', redirectTo: 'pages' },
 ];

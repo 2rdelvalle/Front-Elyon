@@ -1,5 +1,5 @@
 # Usar una imagen base de Node
-FROM node:16
+FROM node:18
 
 # Crear y definir el directorio de trabajo
 WORKDIR /app

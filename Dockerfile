@@ -1,23 +1,30 @@
-# Usar una imagen base de Node
-FROM node:18
+# Build stage
+FROM node:18 AS build
 
-# Crear y definir el directorio de trabajo
+# Set working directory
 WORKDIR /app
 
-# Copiar los archivos de package.json y package-lock.json
+# Install dependencies
 COPY package*.json ./
-
-# Instalar las dependencias
 RUN npm install
 
-# Copiar el resto de los archivos de la aplicación
+# Copy source code
 COPY . .
 
-# Construir la aplicación
+# Build the application
 RUN npm run build
 
-# Exponer el puerto en el que la aplicación va a correr
+# Production stage
+FROM node:18
+
+# Set working directory
+WORKDIR /app
+
+# Copy built files and dependencies
+COPY --from=build /app /app
+
+# Expose port 3000
 EXPOSE 3000
 
-# Comando para correr la aplicación
+# Start the application
 CMD ["npm", "start"]
